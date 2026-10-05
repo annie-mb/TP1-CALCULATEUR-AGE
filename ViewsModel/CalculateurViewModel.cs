@@ -2,13 +2,12 @@ namespace CalculateurAge.ViewModels;
 
 public class CalculateurViewModel : BaseViewModel
 {
-    // Initialisation directe avec string.Empty pour satisfaire le compilateur C#
+    // Initialisation directe avec string.Empty pour régler l'avertissement CS8618
     private string _nom = string.Empty;
     private DateTime _dateNaissance = DateTime.Today.AddYears(-20);
     private string _resultat = string.Empty;
     private bool _resultatVisible;
 
-    // Nouveaux champs pour l'Activité 6
     private string _statut = string.Empty;
     private string _prochainAnniversaire = string.Empty;
 
@@ -82,9 +81,9 @@ public class CalculateurViewModel : BaseViewModel
         int joursRestants = (prochainAnni - aujourdhui).Days;
 
         if (joursRestants == 0)
-            ProchainAnniversaire = "🎂 Joyeux Anniversaire C'est aujourd'hui !";
+            ProchainAnniversaire = " Joyeux Anniversaire ! C'est aujourd'hui !";
         else
-            ProchainAnniversaire = $"🎉 Prochain anniversaire dans {joursRestants} jours";
+            ProchainAnniversaire = $" Prochain anniversaire dans {joursRestants} jours";
 
         ResultatVisible = true;
     }

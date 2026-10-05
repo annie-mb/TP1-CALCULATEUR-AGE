@@ -21,7 +21,7 @@ public partial class ResultatPage : ContentPage
     }
 
     // Revenir à la page précédente.
-    private async void OnRetourClicked(object sender, EventArgs e)
+    private async void OnRetourClicked(object? sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("..");
     }
